@@ -18,6 +18,12 @@ namespace layers.Controllers
         public IEnumerable<Category> GetAll() {
             return _categoryService.GetAll();
         }
+        [HttpGet]
+        [Route("{Id}")]
+        public Category GetById(int Id)
+        {
+            return _categoryService.GetById(Id);
+        }
         [HttpPost]
         public void Add([FromForm] Category category) {
             _categoryService.Add(category);
@@ -31,8 +37,8 @@ namespace layers.Controllers
         //{
         //    _categoryService.Remove(category);
         //}
-        [HttpPatch]
-        public void update(Category category)
+        [HttpPut]
+        public void update([FromForm] Category category)
         {
             _categoryService.Update(category);
         }
