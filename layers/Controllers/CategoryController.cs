@@ -33,10 +33,11 @@ namespace layers.Controllers
         {
             _categoryService.Remove(Id);
         }
-        //public void remove(Category category)
-        //{
-        //    _categoryService.Remove(category);
-        //}
+        [HttpDelete]
+        public void remove(Category category)
+        {
+            _categoryService.Remove(category);
+        }
         [HttpPut]
         public void update([FromForm] Category category)
         {
