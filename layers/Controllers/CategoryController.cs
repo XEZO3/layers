@@ -28,7 +28,7 @@ namespace layers.Controllers
         public void Add([FromForm] Category category) {
             _categoryService.Add(category);
         }
-        [HttpDelete]
+        [HttpDelete("{Id}")]
         public void remove(int Id)
         {
             _categoryService.Remove(Id);

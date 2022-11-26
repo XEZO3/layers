@@ -34,7 +34,8 @@ namespace DAL.Repository
 
         public void Remove(int Id)
         {
-            _context.Remove(Id);
+            var category = _context.categories.Find(Id);
+            _context.Remove(category);
             _context.SaveChanges();
         }
 
